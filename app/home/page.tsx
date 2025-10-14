@@ -2,17 +2,11 @@
 import { useState, useEffect } from 'react';
 import styles from '../../styles/home.module.css';
 import { useRouter } from 'next/navigation';
-<<<<<<< HEAD
 import { useAuth } from '@/hooks/useAuth';
 
 export default function Home() {
   const router = useRouter(); // fixed router
   const { signIn } = useAuth();
-=======
-
-export default function Home() {
-  const router = useRouter(); // fixed router
->>>>>>> 2c9cc2f49eb7480abd62080a8247ebd39e4e0f87
   const [isLogin, setIsLogin] = useState(true);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
@@ -65,12 +59,8 @@ export default function Home() {
       const data = await response.json();
       if (!response.ok) throw new Error(data.error || 'Operation failed');
 
-<<<<<<< HEAD
       // Set authentication state and then navigate to dashboard
       signIn({ token: data.token, user: data.user });
-=======
-      // Directly navigate to dashboard after signup or login
->>>>>>> 2c9cc2f49eb7480abd62080a8247ebd39e4e0f87
       router.push('/dashboard');
 
     } catch (err) {
@@ -106,11 +96,7 @@ export default function Home() {
           <main>
             <h1 className={styles.heroTitle}>
               Transforming Government{' '}
-<<<<<<< HEAD
-              <span className={styles.heroTitleGradient}>Productivity</span>with Data
-=======
               <span className={styles.heroTitleGradient}>Productivity</span> with Data
->>>>>>> 2c9cc2f49eb7480abd62080a8247ebd39e4e0f87
             </h1>
             <p className={styles.heroSubtitle}>
               The next-generation Performance Management System that brings transparency, accountability, and excellence to public service.

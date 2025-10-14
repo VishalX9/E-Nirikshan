@@ -36,11 +36,7 @@ interface MailComposition {
 const MAIL_STORAGE_KEY = 'ems_dpr_mail_draft';
 
 export default function DPRPage() {
-<<<<<<< HEAD
   const { token, loading, user } = useAuth({ requireAuth: true, redirectTo: '/home' });
-=======
-  const { token, loading, user } = useAuth({ requireAuth: true, redirectTo: '/login' });
->>>>>>> 2c9cc2f49eb7480abd62080a8247ebd39e4e0f87
   const { showToast } = useToast();
   const [dprs, setDprs] = useState<DprItem[]>([]);
   const [projects, setProjects] = useState<ProjectOption[]>([]);

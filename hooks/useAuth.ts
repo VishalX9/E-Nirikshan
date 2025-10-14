@@ -21,11 +21,7 @@ export function useAuth(options: UseAuthOptions = {}) {
   const router = useRouter();
   const {
     requireAuth = false,
-<<<<<<< HEAD
     redirectTo = '/home',
-=======
-    redirectTo = '/login',
->>>>>>> 2c9cc2f49eb7480abd62080a8247ebd39e4e0f87
     redirectIfAuthenticated = false,
     authenticatedRedirectTo = '/dashboard',
   } = options;
