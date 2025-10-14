@@ -3,7 +3,10 @@ import { useEffect, useState, useMemo } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import AppShell from '@/components/layout/AppShell';
+<<<<<<< HEAD
 import { useAuth } from '@/hooks/useAuth';
+=======
+>>>>>>> 2c9cc2f49eb7480abd62080a8247ebd39e4e0f87
 
 // --- INTERFACES ---
 interface User {
@@ -66,7 +69,11 @@ const ProgressBar = ({ achieved, target }: { achieved: number; target: number })
 // --- MAIN PAGE COMPONENT ---
 export default function KpiPage() {
   const router = useRouter();
+<<<<<<< HEAD
   const { user: currentUser, loading: authLoading } = useAuth({ requireAuth: true });
+=======
+  const [currentUser, setCurrentUser] = useState<User | null>(null);
+>>>>>>> 2c9cc2f49eb7480abd62080a8247ebd39e4e0f87
   const [kpis, setKpis] = useState<Kpi[]>([]);
   const [users, setUsers] = useState<User[]>([]);
   const [loading, setLoading] = useState(true);
@@ -97,7 +104,23 @@ export default function KpiPage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [statusFilter, setStatusFilter] = useState('All');
 
+<<<<<<< HEAD
   // Authentication is now handled by useAuth hook
+=======
+  useEffect(() => {
+    const userData = localStorage.getItem('user');
+    if (userData) {
+      try {
+        setCurrentUser(JSON.parse(userData));
+      } catch (error) {
+        console.error('Error parsing user data:', error);
+        router.push('/login');
+      }
+    } else {
+      router.push('/login');
+    }
+  }, [router]);
+>>>>>>> 2c9cc2f49eb7480abd62080a8247ebd39e4e0f87
 
   useEffect(() => {
     if (currentUser) {

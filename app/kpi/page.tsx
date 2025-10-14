@@ -5,7 +5,10 @@ import { useEffect, useState, useMemo } from "react"
 import AppShell from "@/components/layout/AppShell"
 import { useRouter } from "next/navigation"
 import { useToast } from "@/hooks/useToast"
+<<<<<<< HEAD
 import { useAuth } from "@/hooks/useAuth"
+=======
+>>>>>>> 2c9cc2f49eb7480abd62080a8247ebd39e4e0f87
 
 interface User {
   _id: string
@@ -97,7 +100,11 @@ const ProgressBar = ({ achieved, target }: { achieved: number; target: number })
 export default function KpiPage() {
   const router = useRouter()
   const { showToast } = useToast()
+<<<<<<< HEAD
   const { user: currentUser, loading: authLoading } = useAuth({ requireAuth: true })
+=======
+  const [currentUser, setCurrentUser] = useState<User | null>(null)
+>>>>>>> 2c9cc2f49eb7480abd62080a8247ebd39e4e0f87
   const [kpis, setKpis] = useState<Kpi[]>([])
   const [users, setUsers] = useState<User[]>([])
   const [loading, setLoading] = useState(true)
@@ -123,7 +130,22 @@ export default function KpiPage() {
     }>
   >([])
 
+<<<<<<< HEAD
   // Authentication is now handled by useAuth hook
+=======
+  useEffect(() => {
+    const userData = localStorage.getItem("user")
+    if (userData) {
+      try {
+        setCurrentUser(JSON.parse(userData))
+      } catch {
+        router.push("/login")
+      }
+    } else {
+      router.push("/login")
+    }
+  }, [router])
+>>>>>>> 2c9cc2f49eb7480abd62080a8247ebd39e4e0f87
 
   const isAdmin = useMemo(() => currentUser?.role === "admin", [currentUser])
 

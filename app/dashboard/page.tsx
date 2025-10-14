@@ -17,7 +17,11 @@ interface DashboardStats {
 }
 
 export default function DashboardPage() {
+<<<<<<< HEAD
   const { user, token, loading } = useAuth({ requireAuth: true, redirectTo: '/home' });
+=======
+  const { user, token, loading } = useAuth({ requireAuth: true, redirectTo: '/login' });
+>>>>>>> 2c9cc2f49eb7480abd62080a8247ebd39e4e0f87
   const { showToast } = useToast();
   const [stats, setStats] = useState<DashboardStats>({ activeProjects: 0 });
   const [isRefreshing, setIsRefreshing] = useState(false);

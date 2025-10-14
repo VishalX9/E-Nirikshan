@@ -23,7 +23,11 @@ const defaultPreferences: PreferenceState = {
 const STORAGE_KEY = 'ems_preferences_v1';
 
 export default function SettingsPage() {
+<<<<<<< HEAD
   const { user, loading } = useAuth({ requireAuth: true, redirectTo: '/home' });
+=======
+  const { user, loading } = useAuth({ requireAuth: true, redirectTo: '/login' });
+>>>>>>> 2c9cc2f49eb7480abd62080a8247ebd39e4e0f87
   const { showToast } = useToast();
   const { theme, setTheme } = useTheme();
   const [preferences, setPreferences] = useState(defaultPreferences);

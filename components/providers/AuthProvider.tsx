@@ -8,7 +8,11 @@ export interface AppUser {
   name: string;
   email: string;
   role: string;
+<<<<<<< HEAD
   employerType?: 'Field' | 'HQ';
+=======
+  employerType?: 'field' | 'hq';
+>>>>>>> 2c9cc2f49eb7480abd62080a8247ebd39e4e0f87
   department?: string;
   position?: string;
   themePreference?: 'light' | 'dark' | 'system';

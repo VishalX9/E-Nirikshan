@@ -43,7 +43,11 @@ interface Employee {
 
 export default function AparPage() {
   const router = useRouter()
+<<<<<<< HEAD
   const { user, loading } = useAuth({ requireAuth: true, redirectTo: "/home" })
+=======
+  const { user, loading } = useAuth({ requireAuth: true, redirectTo: "/login" })
+>>>>>>> 2c9cc2f49eb7480abd62080a8247ebd39e4e0f87
   const { showToast } = useToast()
   const [apars, setApars] = useState<APAR[]>([])
   const [employees, setEmployees] = useState<Employee[]>([])
