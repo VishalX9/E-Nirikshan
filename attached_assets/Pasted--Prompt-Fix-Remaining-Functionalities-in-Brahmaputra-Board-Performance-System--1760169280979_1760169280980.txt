@@ -1,0 +1,157 @@
+---
+
+## 🧠 **Prompt: Fix Remaining Functionalities in Brahmaputra Board Performance System**
+
+### 🧩 **Context Recap**
+
+We’re building a government productivity & performance evaluation platform under the **e-Office framework** for the **Brahmaputra Board**.
+Tech Stack: **Next.js + TypeScript + MongoDB + Express + React Hot Toast + Tailwind**.
+
+We already have:
+
+* Admin & Employee roles
+* KPI, APAR, DPR, Project modules
+* Light theme
+* Notifications using React Hot Toast
+
+✅ Most features are complete (dashboards, profile updates, notifications, DPR filtering, etc.).
+⚠️ Now, we need to fix the remaining **KPI / APAR / project access controls** and **data consistency issues** as detailed below.
+
+---
+
+## 🧱 **Fix List**
+
+### 1️⃣ KPI Visibility & Permissions
+
+* Ensure **KPI parameters (individual metrics)** are visible **only to employees**.
+* Admin should **not** see each metric — only the **final KPI score** once “Analyze KPI” is clicked.
+* Admin’s KPI dashboard should only have:
+
+  * “Add KPI” button
+  * “Analyze KPI” button (returns random mock score — sometimes high, sometimes low).
+* KPI data should refresh automatically after admin analysis (mock scores update instantly).
+
+---
+
+### 2️⃣ APAR Module Cleanup
+
+* When admin **finalizes** an APAR:
+
+  * Remove all **deleted/old APARs** from MongoDB (use hard delete, not soft).
+  * Finalized result should be **visible only to the respective employee**.
+* On employee side:
+
+  * Add option to **include their KPI score** (fetched automatically from their KPI page).
+  * Once submitted, show toast → “✅ Submitted to E-Office”
+  * Fix broken APAR submission route so data actually saves in DB.
+
+---
+
+### 3️⃣ Active Projects (Admin)
+
+* Admin can only:
+
+  * **Add new project**
+  * **Delete project**
+* Remove all extra features (edit, review, analysis, subtasks, progress tracking, etc.).
+* Keep interface clean with just two visible buttons: “➕ Add Project” and “🗑️ Delete Project”.
+
+---
+
+### 4️⃣ Team Directory (Admin)
+
+* Verify that “Add New Employee” route works end-to-end.
+* Allow Admin to:
+
+  * **Delete employees directly**
+  * **Edit Department & Position** inline (auto-save)
+  * View employee **Type (Field / HQ)** as per their registration
+* Ensure all these updates reflect instantly in DB and UI.
+
+---
+
+### 5️⃣ Employee Projects Page
+
+* Employees should **not** be able to create new projects.
+* They can only:
+
+  * **Select assigned project**
+  * **Add tasks**
+  * **Delete their project** (if allowed)
+  * **Submit work → show “✅ Submitted to E-Office” toast**
+* Fix any backend routes if submissions fail.
+
+---
+
+### 6️⃣ DPR Page
+
+* Keep existing “Generate Summary” + “Submit to E-Office ✅” flow.
+* Ensure employees can view their **old DPRs** (filtered by `userId`).
+* Admin should **not** see everyone’s DPR — only their own (for testing consistency).
+
+---
+
+### 7️⃣ UI & Theme Fixes
+
+* Audit all components for **dark background** or **color clashes** (white-on-white, etc.).
+
+  * Especially check modals, forms, hover states, toast containers.
+* Force **light theme** across entire app.
+* Fix any invisible text due to same background color.
+
+---
+
+### 8️⃣ Notification Consistency
+
+* All user actions (submit, delete, analyze, finalize, etc.) must use **React Hot Toast** only.
+* No more browser alerts or confirms anywhere.
+* Toast colors:
+
+  * Success → Green
+  * Error → Red
+  * Info → Blue
+* Example messages:
+
+  * “✅ Submitted to E-Office”
+  * “📊 KPI analyzed successfully”
+  * “🚀 Project created successfully”
+  * “🗑️ Employee removed successfully”
+
+---
+
+### 9️⃣ System Testing
+
+After implementing fixes, perform these checks:
+
+| Role          | Action             | Expected Behavior                           |
+| ------------- | ------------------ | ------------------------------------------- |
+| Admin         | Analyze KPI        | Sees only total score                       |
+| Admin         | Finalize APAR      | Removes old entries, only employee can view |
+| Admin         | Add/Delete Project | Works cleanly, no extra features            |
+| Admin         | Team Directory     | Can edit dept/type/position instantly       |
+| Employee      | Create APAR        | Can attach KPI score, route works           |
+| Employee      | Submit Project     | Shows “Submitted to E-Office ✅”             |
+| Employee      | View KPI           | Sees metrics + final score chart            |
+| Theme         | Across all pages   | Light mode consistent                       |
+| Notifications | All actions        | Show proper toast, no alert()               |
+
+---
+
+### 🔧 Optional Enhancement (If Time Allows)
+
+* Cache recent KPI/APAR analysis data locally (mock analytics API).
+* Improve loading UX using Skeletons or spinners instead of blank states.
+* Add admin-side export (CSV/PDF) for finalized KPI/APAR summaries.
+
+---
+
+### ✅ Final Goal
+
+Deliver a **fully functional**, **light-themed**, and **role-accurate** e-Office productivity app with:
+
+* Transparent KPI & APAR workflows
+* Proper access control
+* No ghost data
+* Smooth UX & notification system
+
+---

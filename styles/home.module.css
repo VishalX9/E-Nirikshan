@@ -1,0 +1,448 @@
+.pageContainer {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #f8fafc; /* Light grey background like a dashboard */
+  color: #0f172a; /* Dark slate text for high contrast */
+  font-family: 'Inter', sans-serif; /* Assuming a clean sans-serif font */
+}
+.heroTitleGradient {
+  margin: 0 0.25em; /* adds space before and after */
+}
+
+/* Hero Section */
+.heroSection {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  overflow: hidden;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* Removed distracting orbs and grid, replaced with a subtle background pattern */
+.heroBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
+  background-size: 20px 20px;
+  opacity: 0.5;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  max-width: 1200px;
+}
+
+.logoHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4rem;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 1.5rem;
+  padding: 1rem 2rem;
+}
+
+.mainLogo {
+position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.logoIcon {
+  font-size: 2.5rem;
+  color: #3b82f6; /* Primary Blue */
+}
+
+.logoTextHero {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+.authButtons {
+  display: flex;
+  gap: 0.75rem;
+  margin-left: auto; /* ensures they stay right */
+}
+
+.loginNavButton,
+.signupNavButton {
+  background-color: #2563eb; /* Tailwind blue-600 */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.loginNavButton:hover,
+.signupNavButton:hover {
+  background-color: #2563eb; /* Tailwind blue-800 */
+}
+.govBadge {
+  padding: 0.5rem 1rem;
+  background-color: #e0f2fe; /* Light blue */
+  border: 1px solid #bae6fd;
+  border-radius: 2rem;
+  color: #0c4a6e;
+  font-weight: 500;
+}
+
+.heroTitle {
+  font-size: clamp(2.5rem, 7vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.2;
+  color: #0f172a;
+  margin-bottom: 1.5rem;
+}
+
+.heroTitleGradient {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8); /* Shades of Primary Blue */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+.heroSubtitle {
+  font-size: clamp(1.1rem, 3vw, 1.25rem);
+  color: #475569; /* Slate grey, softer than black */
+  max-width: 750px;
+  margin: 0 auto 3rem;
+  line-height: 1.6;
+}
+
+.heroStats {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+/* Card style matching the dashboard screenshots */
+.statCard {
+  text-align: center;
+  padding: 1.5rem 2rem;
+  background: white;
+  border: 1px solid #e2e8f0; /* Subtle border */
+  border-radius: 0.75rem; /* Consistent border radius */
+  min-width: 160px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+}
+
+.statCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.07), 0 4px 6px -4px rgb(0 0 0 / 0.07);
+  border-color: #dbeafe;
+}
+
+.statNumber {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1e40af; /* Darker Primary Blue */
+  margin-bottom: 0.25rem;
+}
+
+.statLabel {
+  font-size: 0.875rem;
+  color: #64748b;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* CTA Button matching dashboard buttons */
+.ctaButton {
+  padding: 1rem 2.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  background-color: #2563eb; /* Primary Blue */
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px 0 rgba(59, 130, 246, 0.39);
+}
+
+.ctaButton:hover {
+  transform: translateY(-2px);
+  background-color: #2563eb; /* Darker blue on hover */
+  box-shadow: 0 6px 20px 0 rgba(59, 130, 246, 0.45);
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+}
+
+.ctaButton:hover .arrow {
+  transform: translateX(4px);
+}
+
+
+/* Problem & Solution Sections - Cleaned up */
+.problemSection, .solutionSection {
+  padding: 6rem 2rem;
+}
+
+.sectionContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sectionBadgeWrapper {
+  display: flex;              /* use flexbox */
+  justify-content: center;    /* center horizontally */
+  margin-bottom: 1.5rem;      /* spacing below */
+}
+
+.problemSection .sectionBadge {
+  background-color: #111;       /* dark black background */
+  color: #f5f5f5;               /* light text */
+  border: 1px solid #333;       /* subtle border */
+}
+.sectionBadge {
+  display: inline-block;      /* keeps pill shape */
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: 1.5px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  cursor: default;
+}
+/* Problem section variant - now black/gray */
+
+
+/* Problem hover */
+.problemSection .sectionBadge:hover {
+  background-color: #222;       /* slightly lighter black on hover */
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Solution section variant - blue/teal */
+.solutionSection .sectionBadge {
+  background-color: #3b82f6;    /* Tailwind blue-500 */
+  color: #fff;
+  border: 1px solid #2563eb;    /* blue-600 border */
+}
+
+/* Solution hover */
+.solutionSection .sectionBadge:hover {
+  background-color: #2563eb;    /* darker blue on hover */
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 12px rgba(37, 99, 235, 0.3);
+}
+
+
+.sectionTitle {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.problemGrid, .featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* Unified Card Style for Problem/Solution */
+.problemCard, .featureCard {
+  padding: 2rem;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+}
+
+.problemCard:hover, .featureCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.07), 0 4px 6px -4px rgb(0 0 0 / 0.07);
+}
+
+.problemCard { border-left: 4px solid #100101; }
+.featureCard { border-left: 4px solid  #2563eb;  }
+
+
+.problemIcon, .featureIcon {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+.problemIcon { color: #ef4444; }
+.featureIcon { color: #22c55e; }
+
+
+.problemCard h3, .featureCard h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 0.75rem;
+}
+
+.problemCard p, .featureCard p {
+  color: #475569;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Login Section - Styled to match the app */
+.loginSection {
+  padding: 6rem 2rem;
+  background-color: #f8fafc;
+}
+
+.loginContainer {
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.loginCard {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  padding: 2.5rem;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.07), 0 4px 6px -4px rgb(0 0 0 / 0.07);
+}
+
+.loginHeader {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.loginLogoText {
+  font-size: 1.75rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.loginTagline {
+  color: #64748b;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #334155;
+}
+
+.input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.5rem;
+  background: white;
+  color: #0f172a;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.input:focus {
+  outline: 2px solid transparent;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.loginButton {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  background-color: #2563eb; /* Primary Blue */
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.loginButton:hover {
+  background-color: #2563eb;
+}
+
+.forgotLink {
+  text-align: right;
+  font-size: 0.875rem;
+  color: #3b82f6;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.forgotLink:hover {
+  color: #1e40af;
+  text-decoration: underline;
+}
+.logoImg {
+  width: 100px;
+  height: 80px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Simple Footer */
+.footer {
+  padding: 3rem 2rem;
+  text-align: center;
+  background-color: #e2e8f0;
+  border-top: 1px solid #cbd5e1;
+}
+
+.footer p {
+  color: #64748b;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .heroSection, .problemSection, .solutionSection, .loginSection {
+    padding: 4rem 1.5rem;
+  }
+ .logoHeader {
+  position: relative;
+}
+}
