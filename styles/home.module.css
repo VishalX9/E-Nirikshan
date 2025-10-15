@@ -1,0 +1,704 @@
+.pageContainer {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #f8fafc;
+  color: #0f172a;
+  font-family: 'Inter', sans-serif;
+}
+
+.heroTitleGradient {
+  margin: 0 0.25em;
+}
+
+/* Hero Section */
+.heroSection {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  overflow: hidden;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.heroBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
+  background-size: 20px 20px;
+  opacity: 0.5;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.logoHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4rem;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 1.5rem;
+  padding: 1rem 2rem;
+  position: relative;
+}
+
+.mainLogo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logoIcon {
+  font-size: 2.5rem;
+  color: #3b82f6;
+}
+
+.logoTextHero {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.authButtons {
+  display: flex;
+  gap: 0.75rem;
+  margin-left: auto;
+}
+
+.loginNavButton,
+.signupNavButton {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  white-space: nowrap;
+}
+
+.loginNavButton:hover,
+.signupNavButton:hover {
+  background-color: #1d4ed8;
+}
+
+.govBadge {
+  padding: 0.5rem 1rem;
+  background-color: #e0f2fe;
+  border: 1px solid #bae6fd;
+  border-radius: 2rem;
+  color: #0c4a6e;
+  font-weight: 500;
+}
+
+.heroTitle {
+  font-size: clamp(2rem, 7vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.2;
+  color: #0f172a;
+  margin-bottom: 1.5rem;
+}
+
+.heroTitleGradient {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+.heroSubtitle {
+  font-size: clamp(1rem, 3vw, 1.25rem);
+  color: #475569;
+  max-width: 750px;
+  margin: 0 auto 3rem;
+  line-height: 1.6;
+  padding: 0 1rem;
+}
+
+.heroStats {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.statCard {
+  text-align: center;
+  padding: 1.5rem 2rem;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  min-width: 160px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+}
+
+.statCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.07), 0 4px 6px -4px rgb(0 0 0 / 0.07);
+  border-color: #dbeafe;
+}
+
+.statNumber {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1e40af;
+  margin-bottom: 0.25rem;
+}
+
+.statLabel {
+  font-size: 0.875rem;
+  color: #64748b;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.ctaButton {
+  padding: 1rem 2.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  background-color: #2563eb;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px 0 rgba(59, 130, 246, 0.39);
+}
+
+.ctaButton:hover {
+  transform: translateY(-2px);
+  background-color: #1d4ed8;
+  box-shadow: 0 6px 20px 0 rgba(59, 130, 246, 0.45);
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+}
+
+.ctaButton:hover .arrow {
+  transform: translateX(4px);
+}
+
+/* Problem & Solution Sections */
+.problemSection, .solutionSection {
+  padding: 6rem 2rem;
+}
+
+.sectionContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sectionBadgeWrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.sectionBadge {
+  display: inline-block;
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: 1.5px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  cursor: default;
+}
+
+.problemSection .sectionBadge {
+  background-color: #111;
+  color: #f5f5f5;
+  border: 1px solid #333;
+}
+
+.problemSection .sectionBadge:hover {
+  background-color: #222;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.solutionSection .sectionBadge {
+  background-color: #3b82f6;
+  color: #fff;
+  border: 1px solid #2563eb;
+}
+
+.solutionSection .sectionBadge:hover {
+  background-color: #2563eb;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 12px rgba(37, 99, 235, 0.3);
+}
+
+.sectionTitle {
+  font-size: clamp(1.75rem, 5vw, 3rem);
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 4rem;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.problemGrid, .featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.problemCard, .featureCard {
+  padding: 2rem;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+}
+
+.problemCard:hover, .featureCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.07), 0 4px 6px -4px rgb(0 0 0 / 0.07);
+}
+
+.problemCard { 
+  border-left: 4px solid #100101; 
+}
+
+.featureCard { 
+  border-left: 4px solid #2563eb;  
+}
+
+.problemIcon, .featureIcon {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.problemIcon { 
+  color: #ef4444; 
+}
+
+.featureIcon { 
+  color: #22c55e; 
+}
+
+.problemCard h3, .featureCard h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 0.75rem;
+}
+
+.problemCard p, .featureCard p {
+  color: #475569;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Login Section */
+.loginSection {
+  padding: 6rem 2rem;
+  background-color: #f8fafc;
+}
+
+.loginContainer {
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.loginCard {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  padding: 2.5rem;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.07), 0 4px 6px -4px rgb(0 0 0 / 0.07);
+}
+
+.loginHeader {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.loginLogoText {
+  font-size: 1.75rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.loginTagline {
+  color: #64748b;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #334155;
+}
+
+.input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.5rem;
+  background: white;
+  color: #0f172a;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.input:focus {
+  outline: 2px solid transparent;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.loginButton {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  background-color: #2563eb;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.loginButton:hover {
+  background-color: #1d4ed8;
+}
+
+.loginButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.forgotLink {
+  text-align: right;
+  font-size: 0.875rem;
+  color: #3b82f6;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.forgotLink:hover {
+  color: #1e40af;
+  text-decoration: underline;
+}
+
+.logoImg {
+  width: 100px;
+  height: 80px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Footer */
+.footer {
+  padding: 3rem 2rem;
+  text-align: center;
+  background-color: #e2e8f0;
+  border-top: 1px solid #cbd5e1;
+}
+
+.footer p {
+  color: #64748b;
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+/* Fade In Animation */
+.fadeIn {
+  animation: fadeIn 0.8s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================
+   MOBILE RESPONSIVE STYLES
+   ============================================ */
+
+@media (max-width: 768px) {
+  /* Hero Section Mobile */
+  .heroSection {
+    min-height: auto;
+    padding: 1.5rem 1rem;
+  }
+
+  .logoHeader {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .mainLogo {
+    position: static;
+    transform: none;
+    order: 1;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .logoIcon {
+    font-size: 2rem;
+  }
+
+  .logoTextHero {
+    font-size: 1.5rem;
+  }
+
+  .logoImg {
+    width: 80px;
+    height: 64px;
+  }
+
+  .authButtons {
+    margin-left: 0;
+    order: 2;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .loginNavButton,
+  .signupNavButton {
+    flex: 1;
+    padding: 0.7rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .heroTitle {
+    font-size: clamp(1.75rem, 6vw, 2.5rem);
+    margin-bottom: 1rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    padding: 0 0.5rem;
+  }
+
+  .heroStats {
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .statCard {
+    min-width: 120px;
+    padding: 1rem 1.5rem;
+  }
+
+  .statNumber {
+    font-size: 2rem;
+  }
+
+  .statLabel {
+    font-size: 0.75rem;
+  }
+
+  .ctaButton {
+    padding: 0.875rem 2rem;
+    font-size: 0.95rem;
+  }
+
+  /* Problem & Solution Sections Mobile */
+  .problemSection, 
+  .solutionSection {
+    padding: 4rem 1.5rem;
+  }
+
+  .sectionBadge {
+    font-size: 1rem;
+    padding: 0.4rem 1rem;
+    letter-spacing: 1px;
+  }
+
+  .sectionTitle {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    margin-bottom: 2.5rem;
+  }
+
+  .problemGrid, 
+  .featuresGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .problemCard, 
+  .featureCard {
+    padding: 1.5rem;
+  }
+
+  .problemIcon, 
+  .featureIcon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .problemCard h3, 
+  .featureCard h3 {
+    font-size: 1.125rem;
+  }
+
+  .problemCard p, 
+  .featureCard p {
+    font-size: 0.95rem;
+  }
+
+  /* Login Section Mobile */
+  .loginSection {
+    padding: 4rem 1rem;
+  }
+
+  .loginCard {
+    padding: 2rem 1.5rem;
+  }
+
+  .loginLogoText {
+    font-size: 1.5rem;
+  }
+
+  .loginTagline {
+    font-size: 0.9rem;
+  }
+
+  .input {
+    padding: 0.7rem 0.875rem;
+    font-size: 0.95rem;
+  }
+
+  .loginButton {
+    padding: 0.7rem;
+    font-size: 0.95rem;
+  }
+
+  /* Footer Mobile */
+  .footer {
+    padding: 2rem 1rem;
+  }
+
+  .footer p {
+    font-size: 0.8rem;
+  }
+}
+
+/* Extra Small Mobile Devices */
+@media (max-width: 480px) {
+  .heroTitle {
+    font-size: 1.5rem;
+  }
+
+  .heroSubtitle {
+    font-size: 0.9rem;
+  }
+
+  .heroStats {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .statCard {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .authButtons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .loginNavButton,
+  .signupNavButton {
+    width: 100%;
+  }
+
+  .sectionBadge {
+    font-size: 0.9rem;
+    padding: 0.35rem 0.875rem;
+  }
+
+  .loginCard {
+    padding: 1.5rem 1rem;
+  }
+}
+
+/* Landscape Mobile Orientation */
+@media (max-width: 768px) and (orientation: landscape) {
+  .heroSection {
+    min-height: auto;
+    padding: 2rem 1rem;
+  }
+
+  .logoHeader {
+    margin-bottom: 2rem;
+  }
+
+  .heroStats {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .statCard {
+    min-width: 100px;
+    padding: 1rem;
+  }
+}
