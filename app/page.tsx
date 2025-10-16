@@ -13,7 +13,7 @@ export default function Home() {
       return;
     }
 
-    router.replace(user ? "/dashboard" : "/login");
+    router.replace(user ? "/dashboard" : "/home");
   }, [loading, user, router]);
 
   return null;
